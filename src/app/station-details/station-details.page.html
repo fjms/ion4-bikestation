@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>{{station?.name}}</ion-card-title>
+      <ion-card-subtitle>{{station?.extra.address}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>Disponibles</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-badge>{{station?.free_bikes}}</ion-badge>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label>Huecos Libres</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-badge>{{station?.empty_slots}}</ion-badge>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
