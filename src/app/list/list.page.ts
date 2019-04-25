@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SeviciService } from '../sevici.service';
 import { Subscription } from 'rxjs';
 import Utils from '../Utils';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -16,7 +15,7 @@ export class ListPage implements OnInit, OnDestroy {
   protected stations = [];
   protected stationsCopy = [];
 
-  constructor(public sevici: SeviciService, private router: Router) {
+  constructor(public sevici: SeviciService) {
 
   }
 
