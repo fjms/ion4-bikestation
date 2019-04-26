@@ -1,5 +1,7 @@
 {
   "name": "bikestation",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

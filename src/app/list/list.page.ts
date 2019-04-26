@@ -18,8 +18,8 @@ export class ListPage implements OnInit, OnDestroy {
 
   private serviciStationsRef: Subscription = null;
 
-  protected stations = [];
-  protected stationsCopy = [];
+  public stations = [];
+  public stationsCopy = [];
 
   constructor(public sevici: SeviciService) {
 
