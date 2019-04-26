@@ -28,7 +28,6 @@ export class ListPage implements OnInit, OnDestroy {
   ngOnInit() {
     this.serviciStationsRef = this.sevici.seviciStations$.subscribe(res => {
       if (res) {
-        console.log(res);
         this.stations = res.network.stations;
         this.stationsCopy = res.network.stations;
       }
@@ -40,7 +39,9 @@ export class ListPage implements OnInit, OnDestroy {
   }
 
   ionViewWillEnter() {
-    this.searchbar.setFocus();
+    if (this.searchbar.el.className.includes("searchbar-has-value")) {
+      this.searchbar.setFocus();
+    }
   }
 
   doRefresh(event) {
