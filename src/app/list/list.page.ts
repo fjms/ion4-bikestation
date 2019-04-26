@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+
 import { SeviciService } from '../sevici.service';
 import { Subscription } from 'rxjs';
 import Utils from '../Utils';
@@ -8,7 +9,12 @@ import Utils from '../Utils';
   templateUrl: 'list.page.html',
   styleUrls: ['list.page.scss']
 })
+
+
 export class ListPage implements OnInit, OnDestroy {
+
+
+  @ViewChild('searchbar') searchbar: any;
 
   private serviciStationsRef: Subscription = null;
 
@@ -31,6 +37,10 @@ export class ListPage implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.serviciStationsRef.unsubscribe();
+  }
+
+  ionViewWillEnter() {
+    this.searchbar.setFocus();
   }
 
   doRefresh(event) {
